@@ -5,7 +5,7 @@ import torch
 # Allow user to overide hyperparameters
 EPOCS = int(os.getenv("EPOCS", 300))
 IMAGE_SIZE = int(os.getenv("IMAGE_SIZE", 640))
-BATCH_SIZE = int(os.getenv("BATCH_SIZE", 16))
+BATCH_SIZE = int(os.getenv("BATCH_SIZE", -1))
 WORKERS = int(os.getenv("WORKERS", 8))
 PATIENCE = int(os.getenv("PATIENCE", 100))
 SAGEMAKER_JOB_DIR = os.getenv("SAGEMAKER_JOB_DIR", "/opt/ml/input/data/all")

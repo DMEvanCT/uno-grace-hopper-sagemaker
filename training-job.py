@@ -29,6 +29,7 @@ estimator = sagemaker.estimator.Estimator(
     environment={
         "EPOCS": "100",
         "PATIENCE": "50",
+        "BATCH_SIZE": "1029",
     }
 
 )
@@ -36,7 +37,6 @@ estimator = sagemaker.estimator.Estimator(
 # Define input channels
 inputs = {
     "all": f"s3://{bucket}/{dataset_path}/",
-  
 }
 
 # Launch the training job

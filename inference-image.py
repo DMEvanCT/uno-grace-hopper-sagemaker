@@ -20,7 +20,7 @@ INPUT_DIR = os.getenv("INPUT_DIR", "process")
 
 # Load YOLO model
 try:
-    model = YOLO("uno.pt")  # Replace with your model file
+    model = YOLO("last_llabs.pt")  # Replace with your model file
     logger.info("YOLO model loaded successfully.")
 except Exception as e:
     logger.error(f"Error loading YOLO model: {e}")

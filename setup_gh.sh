@@ -12,6 +12,12 @@ echo "Installing Python 3 and pip..."
 sudo apt install -y python3-pip
 pip install --upgrade pip
 
+
+# Install required packages for flatbuffers
+sudo apt-get remove --purge python3-flatbuffers -y
+pip install --force-reinstall flatbuffers==23.5.26
+
+
 # Install required Python packages
 echo "Installing required Python packages..."
 pip install ultralytics[export]
@@ -26,7 +32,6 @@ echo "Setting up NVIDIA CUDA repository..."
 CUDA_KEYRING="cuda-keyring_1.1-1_all.deb"
 wget -q https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2204/arm64/${CUDA_KEYRING}
 sudo dpkg -i ${CUDA_KEYRING}
-sudo apt-get update
 
 # Install CUDA libraries
 echo "Installing CUDA libraries..."
